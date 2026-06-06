@@ -1,11 +1,14 @@
 import express from "express";
+import cors from "cors";
 import uploadRoutes from "./routes/upload.routes.js";
 
 const app = express();
 const PORT = 3000;
 
+app.use(cors());
 app.use(express.json());
 app.use(uploadRoutes);
+
 
 //manejador de errores de multer y validacion de datos
 
